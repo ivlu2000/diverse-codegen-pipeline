@@ -1,20 +1,18 @@
 import os
-import json
 import glob
 import random
 import re
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
-from contextlib import redirect_stdout
-from io import StringIO
-import traceback
 import argparse
 import subprocess
 import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import sys
 from functools import lru_cache
+from pathlib import Path
+from datasets import load_dataset
 
 @lru_cache(maxsize=None)
 def load_prompt_cached(path):
@@ -24,11 +22,8 @@ def load_prompt_cached(path):
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 sys.path.insert(0, project_root)
 
-from src.shared.llm import LLMClient
-import vllm
-from vllm import LLM, SamplingParams
-from datasets import load_dataset
-from pathlib import Path
+from src.shared.llm import LLMClient  # noqa: E402
+
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 TEMP_DIR = SCRIPT_DIR / "apptainer_runs"

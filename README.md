@@ -27,7 +27,7 @@ For systems without NVidia GPUs, you can use the following command to install th
 uv sync
 ```
 
-However, you wont have access to packages like `faiss-gpu` and `bitsandbytes` which are required for the training.
+However, you wont have access to packages like `bitsandbytes` which are required for the training.
 
 ---
 

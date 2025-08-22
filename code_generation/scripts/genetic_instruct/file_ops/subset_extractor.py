@@ -1,8 +1,11 @@
 from datasets import load_dataset
 from sentence_transformers import SentenceTransformer
-import faiss, numpy as np, pandas as pd
+import faiss
+import numpy as np
+import pandas as pd
 from tqdm import tqdm
-import json, gzip
+import json
+import gzip
 
 DATASET = "amal-abed/genetic_instruct_data"
 TEXT_COL = "instruction"

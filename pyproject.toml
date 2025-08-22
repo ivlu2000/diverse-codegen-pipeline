@@ -25,6 +25,7 @@ dependencies = [
     "evalplus[vllm] @ git+https://github.com/evalplus/evalplus",
     "trl>=0.11.4",
     "sentence-transformers>=5.0.0",
+    "faiss-cpu>=1.12.0",
 ]
 
 [project.optional-dependencies]
