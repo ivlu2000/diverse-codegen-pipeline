@@ -14,14 +14,17 @@ sys.path.insert(0, project_root)
 from src.shared.llm import LLMClient  # noqa: E402
 
 # Parameters
-datasets.config.HF_DATASETS_CACHE = "/work/dlclarge2/abeda-genetic-instruct/datasets"
-INPUT_FILE = "combined_dataset.parquet"
+
+# Optional: set a custom Hugging Face datasets cache directory.
+# If not set, the default is used (usually ~/.cache/huggingface/datasets).
+datasets.config.HF_DATASETS_CACHE = "PATH_TO_CUSTOM_CACHE"
+
 OUTPUT_FILE = "final_deduplicated_samples_MiniLM.parquet"
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 SIMILARITY_THRESHOLD = 0.90
 FAISS_K = 50
 BATCH_SIZE = 128
-USE_LLM_CONFIRMATION = True
+USE_LLM_CONFIRMATION = False
 
 class UnionFind:
     def __init__(self, size):
@@ -41,7 +44,7 @@ class UnionFind:
 
 def main():
     # Load dataset
-    dataset = load_dataset("amal-abed/genetic_instruct_data",  split="train")
+    dataset = load_dataset("amal-abed/test2",  split="train")
     df = dataset.to_pandas()
     instructions = df["instruction"].tolist()
     print(f"📦 Loaded {len(instructions)} samples.")
@@ -83,7 +86,7 @@ def main():
 
     def flush_llm_batch():
         nonlocal batched_prompts, batched_pairs
-        responses = llm.batched_inference(batched_prompts)  # returns a list of strings
+        responses = llm.batched_inference(batched_prompts)
         for idx, resp_text in enumerate(responses):
             resp_text = resp_text.strip().lower()
             if resp_text == "true":

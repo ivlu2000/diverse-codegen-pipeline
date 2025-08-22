@@ -114,18 +114,31 @@ This ensures reasoning, solution, and test cases remain consistent.
 
 ## 5️⃣ Evolutionary Expansion with Genetic-Instruct
 
-Enhance diversity with mutation and crossover:
+To further enhance complexity and diversity, we augment instructions using a **genetic algorithm** approach. This introduces mutation and crossover based variations to existing instructions.  
+
+### Colony-based augmentation workflow  
 
 ```bash
-sbatch code_generation/scripts/genetic_instruct/sbatch_codegen_colony.sh
-sbatch code_generation/scripts/genetic_instruct/file_ops/sbatch_deduplication.sh
+code_generation/scripts/genetic_instruct/sbatch_codegen_colony.sh
 ```
 
-Still have to merge them right? #TODO
+- Launches **4 colonies in parallel**, each producing **50k samples** (total: 200k).  
+- After all colonies finish, run the merger to combine them with the seed dataset:  
 
-Final dataset size: \~800k unique quadruplets.
+```bash
+code_generation/scripts/genetic_instruct/file_ops/colony_merger_upload.py
+```
 
----
+- Once merged, rerun `sbatch_codegen_colony.sh` for the **next 200k samples**, seeded from the updated dataset.  
+- Repeat this cycle until the desired dataset size is reached.  
+
+### Dataset deduplication  
+
+When sample generation is complete, deduplicate to remove semantically or syntactically similar instructions, ensuring diversity and reducing redundancy:  
+
+```bash
+code_generation/scripts/genetic_instruct/file_ops/sbatch_deduplication.sh
+```
 
 ## 6️⃣ Fine-Tuning
 

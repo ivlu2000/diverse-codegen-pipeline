@@ -5,16 +5,25 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:1
 #SBATCH --time=00:30:00
-#SBATCH --array=0-100
+#SBATCH --array=0-3
 #SBATCH --output=logs/slurm_%A_%a.out
+
+
+SUBMIT_DIR="${SLURM_SUBMIT_DIR:-$PWD}"
+echo "SLURM_SUBMIT_DIR: $SUBMIT_DIR"
+cd "$SUBMIT_DIR" || { echo "Failed to cd to $SUBMIT_DIR"; exit 1; }
+
+mkdir -p logs
+mkdir -p checkpoints
 
 echo "Working Directory: $PWD"
 echo "Running job $SLURM_JOB_NAME with array task ID $SLURM_ARRAY_TASK_ID"
 
-export TRANSFORMERS_CACHE="/pfs/work9/workspace/scratch/fr_aa502-code_gen/models"
-export HF_HOME="/pfs/work9/workspace/scratch/fr_aa502-code_gen/models"
+# Optional: set a custom Hugging Face cache directory (models, tokenizers, etc.).
+# If not set, defaults to ~/.cache/huggingface on your machine.
+export HF_HOME="PATH_TO_CUSTOM_CACHE/models"
 export TF_FORCE_GPU_ALLOW_GROWTH=true
-export APPTAINER_CACHEDIR="/pfs/work9/workspace/scratch/$USER/apptainer_cache"
+export APPTAINER_CACHEDIR="$PWD/apptainer_cache"
 
 echo "SLURM node list: $SLURM_NODELIST"
 echo "CUDA_VISIBLE_DEVICES: $CUDA_VISIBLE_DEVICES"

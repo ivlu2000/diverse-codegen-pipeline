@@ -36,13 +36,14 @@ TEMP_DIR.mkdir(parents=True, exist_ok=True)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--start", type=int, default=0, help="Start index of the dataset slice")
-parser.add_argument("--end", type=int, default=1000, help="End index of the dataset slice")
+parser.add_argument("--end", type=int, default=200000, help="End index of the dataset slice")
 parser.add_argument("--colony-id", type=int, required=True, help="Unique colony ID (e.g., 0, 1, 2, 3)")
 args = parser.parse_args()
 
 NUM_SAMPLES = 50000
 BATCH_SIZE = 128
-APPTAINER_IMAGE = "/pfs/work9/workspace/scratch/fr_aa502-code_gen/synthetic_reasoning/code_generation/scripts/genetic_instruct/apptainer/python.sif"
+SCRIPT_DIR = Path(__file__).resolve().parent
+APPTAINER_IMAGE = SCRIPT_DIR / "apptainer" / "python.sif"
 
 llm = LLMClient(
     base_url="http://localhost:8000/v1",
@@ -172,7 +173,7 @@ def run_code_in_apptainer(code_str):
 
         cmd = [
             "apptainer", "exec", "--nv",
-            "--pwd", str(TEMP_DIR),             
+            "--pwd", str(TEMP_DIR),
             APPTAINER_IMAGE,
             "python3", tmp_filename
         ]
@@ -291,7 +292,7 @@ def generate_samples(llm, seed, samples):
 
 
 def main():
-    dataset = load_dataset("amal-abed/combined_dataset", split="train")
+    dataset = load_dataset("amal-abed/test2", split="train")
     subset = dataset.select(range(args.start, args.end))
 
     seed = [{"instruction": item["instruction"]} for item in subset if "instruction" in item]
