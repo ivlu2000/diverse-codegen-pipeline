@@ -49,6 +49,13 @@ Scripts:
 
   ```bash
   uv run code_generation/scripts/seed_data_collection/hugging_face/leetcode.py
+  uv run code_generation/scripts/seed_data_collection/advent_of_code.py
+  ...
+  ```
+
+  At the end we should filter the tasks because some are duplicates:
+
+  ```bash
   uv run code_generation/scripts/seed_data_collection/filter_tasks.py
   ```
 
