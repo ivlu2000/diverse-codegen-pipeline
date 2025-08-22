@@ -34,7 +34,7 @@ python -u code_generation/scripts/instruction_tuning/load_data.py \
 
 # Pass NUM_SAMPLES as environment variable to the finetune script
 export NUM_SAMPLES=$NUM_SAMPLES
-export DATA_PATH="/home/fr/fr_fr/fr_il72/work/pfs7wor9/fr_il72-code-myllm/synthetic_reasoning/$OUTPUT_PATH"
+export DATA_PATH="./$OUTPUT_PATH"
 export OUTPUT_MODEL_PATH="code_generation/models/codegemma-2b-finetuned-${DATASET_NAME}"
 bash code_generation/scripts/instruction_tuning/finetune_codegemma.sh
 

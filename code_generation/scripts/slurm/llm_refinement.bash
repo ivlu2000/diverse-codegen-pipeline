@@ -24,7 +24,6 @@ fi
 echo "Using offset: $OFFSET"
 echo "Using take: $TAKE"
 
-# export HF_HOME="/home/fr/fr_fr/fr_il72/work/gpfs/fr_il72-code-llm/synthetic_reasoning/.cache"
 
 echo "Workingdir: $PWD";
 echo "Started at $(date)";
@@ -48,7 +47,6 @@ python -u code_generation/scripts/fasttext/llm_refinement.py --offset "$OFFSET" 
 kill $VLLM_PID
 
 
-# python -u code_generation/src/fasttext/llm_refinement.py
 
 
 echo "DONE";

@@ -32,8 +32,8 @@ However, you wont have access to packages like `faiss-gpu` and `bitsandbytes` wh
 ---
 
 ## 0️⃣ Note
-Typically all all sh or bash scripts have been written to be run on the HPC cluster.
-If you have a gpu locally, you can run the python scripts directly and dont have to use the slurm scripts.
+Typically all all sh or bash scripts have been written to be run on the HPC cluster. It is very likely that you have to change the some of the top level instructions for it to be run on a another HPC cluster.
+If you have a gpu locally, you can run the python scripts directly and dont have to use the slurm scripts and can just use the slurm scripts as a reference on how to run the scripts.
 
 ## 1️⃣ Dataset Curation & Expansion
 
@@ -44,7 +44,7 @@ Collect curated seed problems (\~40k tasks):
 
 Scripts:
 
-* `scripts/seed_data_collection/*`
+* `code_generation/scripts/seed_data_collection/*`
 * Example:
 
   ```bash
@@ -89,7 +89,7 @@ apptainer pull python_3.11.sif docker://python:3.11
 Run with offsets in parallel:
 
 ```bash
-sbatch scripts/slurm/llm_refinement.bash 0 100
+sbatch code_generation/scripts/slurm/llm_refinement.bash 0 100
 ```
 
 Result: \~220k validated quadruplets.
