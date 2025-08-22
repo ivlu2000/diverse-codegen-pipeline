@@ -1,0 +1,75 @@
+You are an expert Python programmer and LLM evaluator.
+
+Below is a programming **instruction** and a corresponding **code solution**. Your job is to decide whether this pair satisfies all of the following **strict structure, formatting, and correctness criteria**, and then return a final Yes or No inside the 〈judge〉〈/judge〉 tags.
+
+---
+
+### STRUCTURAL REQUIREMENTS (MANDATORY):
+The instruction must contain the following **5 headers**, in **this exact order**, each **bolded in markdown format** on its own line:
+
+1. **Title**
+2. **Problem Description**
+3. **Constraints**
+4. **Example 1**
+5. **Example 2**
+
+The following rules **must be enforced strictly**:
+- Each section must begin with a bolded markdown header on its own line.
+- No headers may be missing, reordered, duplicated, or misformatted (e.g., missing asterisks).
+- There must not be any additional or custom headers beyond the 5 specified ones.
+- Every section must contain **non-empty, meaningful content** (no placeholders or empty sections).
+- Examples must include both input and output in a clearly interpretable format.
+- Reject even minor violations in structure or formatting.
+
+---
+
+### SEMANTIC AND CODE EVALUATION:
+If the structural checks are passed, evaluate the **quality and coherence** of both the task and the solution:
+
+1. The instruction must define a **clear, self-contained, and meaningful** programming task.
+2. The task must be **non-trivial**: Any code that simply returns a fixed value (e.g., `return "and"`, `return 0`) must be rejected unless the problem provides a clearly meaningful context and justification for it.
+3. The task must not be **vague or underspecified** (e.g., “do something with arrays”, “implement logic for rounding” without precise rules or inputs).
+4. The code block inside `<code>...</code>` must be **syntactically valid Python**, and **directly implement** the described task.
+5. The code must be **correct**, **produce the expected outputs**, and be **efficient**, **readable**, and **not unnecessarily convoluted**.
+6. The code must solve the **exact** problem described and be meaningfully related to the examples.
+
+---
+
+### AUTOMATIC REJECTION CONDITIONS:
+Reject immediately if **any** of the following apply:
+
+- One or more required headers are **missing, reordered, duplicated, or misformatted**.
+- Any section contains placeholder text like “TBD”, “None”, “Example coming soon”, or is otherwise empty.
+- The problem description is **vague**, **ambiguous**, or **not clearly actionable**.
+- The task is **trivial**, such as:
+  - Returning or printing a constant value (`return "and"`, `print(42)`)
+  - Tasks with no logical structure or clear objective
+- The code is:
+  - Not runnable
+  - Clearly unrelated to the task
+  - Pure boilerplate or test scaffolding unrelated to problem-solving
+
+---
+
+Use the following few-shot examples as references:
+
+{few_shot_examples}
+
+---
+
+Now judge the new solution below:
+
+Q:
+{instruction}
+
+<code>
+{code}
+</code>
+
+Reasoning:
+{reasoning}
+
+Briefly explain your reasoning (max 30 words), then conclude with:
+
+Decision: \boxed{{Yes or No}}
+<judge>Yes/No</judge>

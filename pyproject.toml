@@ -1,0 +1,45 @@
+[project]
+name = "diverse_codegen_pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "bs4>=0.0.2",
+    "dask[complete]>=2025.2.0",
+    "fastparquet>=2024.11.0",
+    "fasttext>=0.9.3",
+    "pandas>=2.2.3",
+    "peft==0.10.0",
+    "accelerate==0.27.2",
+    "pre-commit>=4.1.0",
+    "requests>=2.32.3",
+    "selenium>=4.29.0",
+    "wandb>=0.19.8",
+    "zstandard>=0.23.0",
+    "fasttext-parallel>=0.1.4",
+    "openai>=1.65.5",
+    "vllm>=0.8.5.post1",
+    "tensorboardx>=2.6.4",
+    "datasets>=3.6.0",
+    "evalplus[vllm] @ git+https://github.com/evalplus/evalplus",
+    "trl>=0.11.4",
+    "sentence-transformers>=5.0.0",
+]
+
+[project.optional-dependencies]
+linux = [
+    "bitsandbytes>=0.46.0",
+]
+
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.6",
+]
+
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = ["E501"]
+

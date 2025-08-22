@@ -1,0 +1,111 @@
+Based on the following instruction and reasoning, generate 3 different Python solutions with their corresponding test cases.
+
+**Instruction**: {instruction}
+
+**Reasoning**: {reasoning}
+
+You MUST generate exactly 3 different solution-test pairs using the EXACT format below. Do not modify the tag names or structure.
+
+**REQUIRED FORMAT - COPY EXACTLY:**
+
+<solution_1>
+```python
+def example_function_1():
+    # Your first solution implementation here
+    pass
+```
+</solution_1>
+
+<test_1>
+```python
+def test_solution_1():
+    # Your first test cases here
+    assert example_function_1() == expected_result
+
+test_solution_1()
+```
+</test_1>
+
+<solution_2>
+```python
+def example_function_2():
+    # Your second solution implementation here
+    pass
+```
+</solution_2>
+
+<test_2>
+```python
+def test_solution_2():
+    # Your second test cases here
+    assert example_function_2() == expected_result
+
+test_solution_2()
+```
+</test_2>
+
+<solution_3>
+```python
+def example_function_3():
+    # Your third solution implementation here
+    pass
+```
+</solution_3>
+
+<test_3>
+```python
+def test_solution_3():
+    # Your third test cases here
+    assert example_function_3() == expected_result
+
+test_solution_3()
+```
+</test_3>
+
+**CRITICAL REQUIREMENTS:**
+1. You MUST use the exact tags: <solution_1>, <test_1>, <solution_2>, <test_2>, <solution_3>, <test_3>
+2. Do not change, modify, or omit any tags
+3. Generate exactly 3 different approaches/solutions
+4. Each solution must be complete and runnable Python code
+5. Each test suite must be comprehensive and test the corresponding solution
+6. Do not include any explanations outside the code blocks
+7. Make sure all solutions are syntactically correct Python code
+8. **MANDATORY**: ALL code must be wrapped in ```python blocks - never use plain text for code
+9. **MANDATORY**: Every solution and test must start with ```python and end with ```
+10. **MANDATORY**: Do not include any code outside of the ```python blocks
+11. **MANDATORY**: Each test function must call itself at the end (e.g., test_solution_1())
+12. **MANDATORY**: Do not include any text, explanations, or comments outside the tags
+13. **MANDATORY**: Your response must start with <solution_1> and end with </test_3>
+
+**SECURITY REQUIREMENTS:**
+14. **CRITICAL**: Do NOT use any of these dangerous operations in your code:
+    - File operations: open(), os.*, pathlib.*, glob.*, shutil.*
+    - System commands: subprocess.*, os.system(), os.popen()
+    - Network access: urllib.*, requests.*, socket.*, http.*, https.*
+    - Process control: multiprocessing.*, threading.*, signal.*
+    - Database access: sqlite3.*, pickle.*, marshal.*
+    - Input/output: input(), eval(), exec(), compile()
+    - System info: platform.*, psutil.*, resource.*
+15. **ONLY USE**: Python built-in functions and libraries
+
+**START YOUR RESPONSE WITH THE FIRST TAG <solution_1> AND END WITH </test_3>**
+
+**EXAMPLE OF CORRECT FORMAT:**
+<solution_1>
+```python
+def solve_problem():
+    return "solution"
+```
+</solution_1>
+
+<test_1>
+```python
+def test_solve_problem():
+    assert solve_problem() == "solution"
+
+test_solve_problem()
+```
+</test_1>
+
+**IMPORTANT: If you cannot follow this exact format, your response will be rejected.**
+**DO NOT ADD ANY TEXT BEFORE <solution_1> OR AFTER </test_3>**

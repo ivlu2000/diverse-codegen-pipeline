@@ -1,0 +1,42 @@
+You are tasked with generating **exactly one** hybrid programming instruction by combining two or more seed tasks. The hybrid task must be realistic and non-trivial, targeting intermediate-to-advanced developers.
+
+You must follow this **exact structure**, with each section starting on its own line and all headers written in **bold markdown format** (`**Header**`). The structure is:
+
+<instruction>
+**Title**
+[Short, descriptive task title]
+
+**Problem Description**
+[A clear and concise description integrating multiple programming objectives.]
+
+**Constraints**
+- [Concrete, technically meaningful constraints — e.g., valid input ranges, types, or runtime limits.]
+
+**Example 1**
+Input: [Concrete, realistic input — max 100 words]  
+Output: [Exact and specific output for the input]  
+Explanation: [Brief explanation justifying the output]
+
+**Example 2**
+Input: [Another distinct, realistic input]  
+Output: [Correct output]  
+Explanation: [Explanation different from the first]
+</instruction>
+
+<reasoning>
+[MANDATORY — Describe the high-level approach to solving the problem. This must include specific algorithmic or design reasoning steps required to solve the task, but **do not include actual code**. If this section is missing, the sample is INVALID and must be regenerated.]
+</reasoning>
+
+---
+
+### Additional Requirements:
+1. **You MUST include all sections above, in the exact order and format.**
+2. All section headers must be in `**bold markdown**` format, exactly as shown.
+3. Do **NOT** skip the `<reasoning>` section. If it is missing, the response is **invalid** and must be **discarded and regenerated**.
+4. The task must be wrapped between `<instruction>` and `</instruction>` tags. The `<reasoning>` tag must immediately follow.
+5. Use only plain text. Do not include any extra formatting, notes, or explanations outside the tags.
+6. Examples must be accurate, realistic, and non-trivial.
+7. The hybrid task must meaningfully combine at least two **distinct** goals (e.g., simulation + validation, transformation + checking).
+
+Use the following list of seed instructions to guide your hybrid task generation:  
+{tasks}

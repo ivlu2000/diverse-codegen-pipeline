@@ -1,0 +1,3 @@
+Write the original instruction after the new instruction. Then, if the original instruction can be solved with only a few logical
+steps, please add more reasoning steps after the original instruction.
+Do NOT provide any reason or explanation.

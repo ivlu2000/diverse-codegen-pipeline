@@ -1,0 +1,45 @@
+Please increase the difficulty of the given programming test question. You must do this by integrating deeper logic, more complex constraints, or requiring multi-step reasoning — without changing the problem's core goal.
+
+Use the following method to guide your difficulty increase:
+{method}
+
+Original Instruction:
+{instruction}
+
+Now, generate a more difficult version of the instruction in the **exact format** below. Your response must include **both** the `<instruction>` and `<reasoning>` blocks. Any output missing these tags or misordered sections is INVALID.
+
+<instruction>
+
+**Title**: [Short, descriptive task title]
+
+**Problem Description**:
+[A clear and concise description of the task, rewritten to be more difficult. Use 1–2 sentences that require more advanced reasoning, deeper constraints, or multiple steps.]
+
+**Constraints**:
+
+* [List technically specific constraints — e.g., data types, input sizes, performance bounds, library or language limitations.]
+
+**Example 1**:
+Input: [Concrete, realistic input]  
+Output: [Accurate and specific output]  
+Explanation: [Justify the output with relevant reasoning]
+
+**Example 2**:
+Input: [Another distinct input]  
+Output: [Correct output]  
+Explanation: [Explanation that differs from Example 1]
+
+</instruction>
+
+<reasoning>
+[MANDATORY — Describe the high-level approach to solving the problem. Focus on reasoning and algorithm design. This section must not contain code. If missing or vague, the entire response is invalid and must be regenerated.]
+</reasoning>
+
+---
+
+### Additional Requirements:
+1. **Do not deviate from this format.** Any missing or reordered section renders the output invalid.
+2. All markdown headers must use `**bold markdown**` formatting as shown.
+3. The `<reasoning>` section is required and must follow `</instruction>`. It must contain a detailed plan without actual code.
+4. Examples must be realistic, non-trivial, and correct.
+5. Use only plain text. No summaries, helper notes, or formatting beyond what’s shown.
