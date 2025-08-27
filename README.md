@@ -173,13 +173,13 @@ save_head_options = [False, True]
 To run the experiments, you can use the following script:
 
 ```bash
-sbatch code_generation/scripts/slurm/finetune_model_codegemma.bash 5000 HF_DATASET_NAME
+sbatch code_generation/scripts/slurm/finetune_model_codegemma.bash 5000 aaiv/ICRT_Dataset
 ```
 
 For the Phi-2 experiments, you can use the following script:
 
 ```bash
-sbatch code_generation/scripts/slurm/finetune_model_phi2_one_epoch.bash 5000 HF_DATASET_NAME
+sbatch code_generation/scripts/slurm/finetune_model_phi2_one_epoch.bash 5000 aaiv/ICRT_Dataset
 ```
 
 We also finetuned **Phi-2** with other datasets. The datasets sepcified in the paper are from EpiCoder, SelfCodeAlign and our homogenous dataset.

@@ -287,7 +287,7 @@ def generate_samples(llm, seed, samples):
 
 
 def main():
-    dataset = load_dataset("HF_DATASET_NAME", split="train")
+    dataset = load_dataset("aaiv/ICRT_Dataset", split="train")
     subset = dataset.select(range(args.start, args.end))
 
     seed = [{"instruction": item["instruction"]} for item in subset if "instruction" in item]

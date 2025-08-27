@@ -10,7 +10,7 @@
 
 # Parse command line arguments
 NUM_SAMPLES=${1:-50000}  # Default to 50000 if not provided
-DATASET=${2:-"HF_DATASET_NAME"}  # Dataset to use
+DATASET=${2:-"aaiv/ICRT_Dataset"}  # Dataset to use
 
 echo "NUM_SAMPLES: $NUM_SAMPLES"
 echo "DATASET: $DATASET"
