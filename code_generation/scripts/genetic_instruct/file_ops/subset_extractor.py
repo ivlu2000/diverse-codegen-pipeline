@@ -7,7 +7,7 @@ from tqdm import tqdm
 import json
 import gzip
 
-DATASET = "amal-abed/genetic_instruct_data"
+DATASET = "HF_DATASET_NAME"
 TEXT_COL = "instruction"
 
 SAMPLE_N = 550_000

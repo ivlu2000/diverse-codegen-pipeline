@@ -4,7 +4,7 @@ import argparse
 import random
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--dataset", type=str, default="ivlu2000/dclm-refined", 
+parser.add_argument("--dataset", type=str, default="HF_DATASET_NAME",
                    help="Dataset to load")
 parser.add_argument("--num_samples", type=int, default=5000, 
                    help="Number of samples in the final dataset")

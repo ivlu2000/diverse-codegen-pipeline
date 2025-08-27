@@ -43,7 +43,7 @@ class UnionFind:
 
 def main():
     # Load dataset
-    dataset = load_dataset("amal-abed/test2",  split="train")
+    dataset = load_dataset("HF_DATASET_NAME",  split="train")
     df = dataset.to_pandas()
     instructions = df["instruction"].tolist()
     print(f"📦 Loaded {len(instructions)} samples.")

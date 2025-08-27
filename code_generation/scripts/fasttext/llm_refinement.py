@@ -484,7 +484,7 @@ def main():
     if not os.path.exists(parquet_path):
         print("Loading dataset from Hugging Face")
         df = dd.read_parquet(
-            "hf://datasets/ivlu2000/dclm-baseline-fasttext/**/*.parquet",
+            "PATH_TO_PARQUET",
             dtype_backend="pyarrow",
         )
         

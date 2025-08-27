@@ -72,8 +72,6 @@ uv run code_generation/scripts/fasttext/train_model.py
 sbatch code_generation/scripts/slurm/dclm_baseline.bash
 ```
 
-Dataset available: [Filtered DCLM-Baseline](https://huggingface.co/datasets/ivlu2000/dclm-baseline-fasttext)
-
 ---
 
 ## 3️⃣ Structuring into Instruction–Reasoning–Solution–Test Quadruplets
@@ -100,7 +98,6 @@ sbatch code_generation/scripts/slurm/llm_refinement.bash 0 100
 ```
 
 Result: \~220k validated quadruplets.
-Dataset available: [Refined Dataset](https://huggingface.co/datasets/ivlu2000/dclm-refined-tested)
 
 ---
 
@@ -176,27 +173,26 @@ save_head_options = [False, True]
 To run the experiments, you can use the following script:
 
 ```bash
-sbatch code_generation/scripts/slurm/finetune_model_codegemma.bash 5000 amal-abed/combined_dataset
+sbatch code_generation/scripts/slurm/finetune_model_codegemma.bash 5000 HF_DATASET_NAME
 ```
 
 For the Phi-2 experiments, you can use the following script:
 
 ```bash
-sbatch code_generation/scripts/slurm/finetune_model_phi2_one_epoch.bash 5000 amal-abed/combined_dataset
+sbatch code_generation/scripts/slurm/finetune_model_phi2_one_epoch.bash 5000 HF_DATASET_NAME
 ```
 
 We also finetuned **Phi-2** with other datasets. The datasets sepcified in the paper are from EpiCoder, SelfCodeAlign and our homogenous dataset.
 Those are their names:
  * microsoft/EpiCoder-func-380k
  * bigcode/self-oss-instruct-sc2-exec-filter-50k
- * amal-abed/5k-subset-instructions
 
 To run the experiments, you can use the following script:
 
 ```bash
 sbatch code_generation/scripts/slurm/finetune_model_phi2_one_epoch.bash 5000 microsoft/EpiCoder-func-380k
 sbatch code_generation/scripts/slurm/finetune_model_phi2_one_epoch.bash 5000 bigcode/self-oss-instruct-sc2-exec-filter-50k
-sbatch code_generation/scripts/slurm/finetune_model_phi2_one_epoch.bash 5000 amal-abed/5k-subset-instructions
+sbatch code_generation/scripts/slurm/finetune_model_phi2_one_epoch.bash 5000 HF_DATASET_NAME
 ```
 
 All results are stored in the `code_generation/models/` folder.
@@ -235,10 +231,4 @@ Expected performance (Phi-2):
 
 
 ---
-
-## 📂 Resources
-
-* [Final 800k Dataset](https://huggingface.co/datasets/amal-abed/combined_dataset)
-* [Filtered DCLM-Baseline](https://huggingface.co/datasets/ivlu2000/dclm-baseline-fasttext)
-* [Refined Dataset](https://huggingface.co/datasets/ivlu2000/dclm-refined-tested)
 

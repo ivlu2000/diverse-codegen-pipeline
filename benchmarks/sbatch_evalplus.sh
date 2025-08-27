@@ -18,7 +18,7 @@ source .venv/bin/activate
 
 # Add evaluation here
 echo "Running evaluation..."
-evalplus.evaluate --model "ivlu2000/5k-subset-instructions_5" \
+evalplus.evaluate --model "HF_MODEL_NAME" \
                   --dataset mbpp \
                   --backend hf \
                   --greedy

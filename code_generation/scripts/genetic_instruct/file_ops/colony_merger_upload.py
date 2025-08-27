@@ -8,7 +8,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 CHECKPOINT_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "checkpoints"))
 CHECKPOINT_GLOB = os.path.join(CHECKPOINT_DIR, "final_generated_instructions_colony_*.parquet")
 
-HUB_DATASET_ID = "amal-abed/test2"
+HUB_DATASET_ID = "HF_DATASET_NAME"
 SPLIT_NAME = "train"
 
 OUTPUT_PARQUET = os.path.join(CHECKPOINT_DIR, "combined_dataset.parquet")
